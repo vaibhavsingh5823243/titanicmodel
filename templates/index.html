@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titanic Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+</head>
+<body style="background-image:url('https://images.newindianexpress.com/uploads/user/imagelibrary/2021/1/13/w1200X800/Voyage_of_Nightmares_and.jpg');">
+    {% if form==1 %}
+    <div class="container"></div>
+      <form action="/" method="post" class="container">
+        <!-- Form -->
+        <div class="row">
+            <div class="heading py-5">
+                <h3>Welcome To Our Titanic Survived Prediction Model</h3>
+                <p>Enter your details here.</p>
+            </div>
+            <!-- first half -->
+            <div class="col-md-5">
+                <div class="form-group py-3">
+                    <label for="pclass">Passenger Class</label>
+                    <select id="pclass" name="pclass">
+                        <option value="1">First Class</option>
+                        <option value="2">Second Class</option>
+                        <option value="3">Third Class</option>
+                    </select>
+                </div>
+                <div class="form-group py-3">
+                    <label for="sex">Sex</label>
+                    <select id="sex" name="sex">
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+                <div class="form-group py-3">
+                    <label for="age">Age</label>
+                    <input type="text" class="form-control" required  id="age" name="age"   placeholder="Age">
+                </div>
+
+            </div>
+            <!-- other half -->
+            <div class="offset-md-1 col-md-5">
+                <div class="form-group py-3">
+                    <label for="sibpb">SibPB</label>
+                    <input type="text" class="form-control" required  id="sibpb" name="sibpb"   placeholder="Siblings aboard">
+                </div>
+                <div class="form-group py-3">
+                    <label for="parch">Parch</label>
+                    <input type="text" class="form-control" required  id="parch" name="parch"   placeholder="Parents/children aboard">
+                </div>
+                <div class="form-group py-3">
+                    <label for="fare">Fare</label>
+                    <input type="text" class="form-control" required  id="fare" name="fare"   placeholder="fare price in dollors">
+                </div>
+
+            </div>
+            <div class="col-sm-12" style="text-align: center; padding: 10px 50px 0px 0px;">
+                <button type="submit" class="btn btn-primary" name="submit">Predict</button>
+            </div>
+            <!-- <input required  type="submit" name="submit"> -->
+        </div>
+      </form>
+    </div>
+    <div class="container">
+    {% endif %}
+    {% if result==1 or result==0 %}
+       {% if result==1 %}
+       <h5>Person Survived </h5>
+       {% endif %}
+       {% if result==0 %}
+       <h5>Person Not Survived </h5>
+       {% endif %}
+       <div class="col-sm-12" style="text-align: center; padding: 10px 50px 0px 0px;">
+                <a href="/"><button class="btn btn-primary" name="back">Back</button></a>
+            </div>
+    {% endif %}
+        </div>
+
+</body>
+</html>
